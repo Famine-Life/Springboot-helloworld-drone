@@ -37,15 +37,10 @@ steps:
         #from_secret: ssh_password
       port: 22
       script:
-#        - echo =======暂停容器=======
-#        - docker stop `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
-#        - echo =======暂停旧容器和镜像=======
-#        - docker rm -f `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
-#        - docker rmi `docker images | grep springboot-helloworld | awk '{print $3}' `
         - echo =======开始构建新镜像=======
         - cd /data/drone/helloDemo
         - docker build -t springboot-helloworld:latest .
-        - - echo =======镜像列表=======
+        - echo =======镜像列表=======
         - docker images
         - echo =======开始部署应用=======
         - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld:latest
