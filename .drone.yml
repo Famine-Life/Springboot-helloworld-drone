@@ -23,7 +23,7 @@ steps:
       - mvn clean package -Dmaven.test.skip=true
       # 将打包后的文件复制到宿主机映射目录
       - cp target/*.jar /home
-      - cp ../Dockerfile /home
+      - cp Dockerfile /home
 
   # 2.使用ssh访问主机制作镜像并运行
   - name: ssh commands
