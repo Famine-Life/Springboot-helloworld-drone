@@ -51,9 +51,10 @@ steps:
         - echo =======开始部署应用=======
         - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld:latest
         - echo =======清理构建文件=======
-       # - rm -rf *
+        - rm -rf *
         - echo =======部署成功=======
 
+# 3.钉钉通知 (注释掉，没测试过)
 #  - name: dingTalk notification
 #    pull: if-not-exists
 #    image: guoxudongdocker/drone-dingtalk:latest
