@@ -32,9 +32,9 @@ steps:
     settings:
       host: 60.205.254.71
       username: root
-      password:
+      password: 57890141@Wonder.
         # 从drone仓库配置中秘密空间读取密码
-        from_secret: ssh_password
+        #from_secret: ssh_password
       port: 22
       script:
         - echo =======暂停容器=======
