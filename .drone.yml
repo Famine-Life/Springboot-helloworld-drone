@@ -46,12 +46,12 @@ steps:
         - echo =======开始构建新镜像=======
         - cd /data/drone/helloDemo
         - docker build -t springboot-helloworld:latest .
-        - echo =======镜像列表=======
+        - echo =======镜像列表(如果服务器镜像太多建议注释)=======
         - docker images
         - echo =======开始部署应用=======
         - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld:latest
-        - echo =======清理构建文件=======
-        - rm -rf *
+        - echo =======清理构建文件(建议保留)=======
+        #- rm -rf *
         - echo =======部署成功=======
 
 # 3.钉钉通知 (注释掉，没测试过)
