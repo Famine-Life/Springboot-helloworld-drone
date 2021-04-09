@@ -32,7 +32,7 @@ steps:
     settings:
       host: 60.205.254.71
       username: root
-      password: @Wonder
+      password:
         # 从drone仓库配置中秘密空间读取密码
         from_secret: ssh_password
       port: 22
