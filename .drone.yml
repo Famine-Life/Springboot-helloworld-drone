@@ -19,7 +19,7 @@ steps:
     commands:
       # 开始打包maven工程
       - ls
-      - cd springboot-helloworld
+#      - cd springboot-helloworld
       - mvn clean package -Dmaven.test.skip=true
       # 将打包后的文件复制到宿主机映射目录
       - cp target/*.jar /home
