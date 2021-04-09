@@ -44,9 +44,10 @@ steps:
         - docker rmi `docker images | grep springboot-helloworld | awk '{print $3}' `
         - echo =======开始构建新镜像=======
         - cd /data/drone/helloDemo
-        - docker build -t springboot-helloworld:v1 .
+        - docker build -t springboot-helloworld .
+        - docker images
         - echo =======开始部署应用=======
-        - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld:v1
+        - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld
         - echo =======清理构建文件=======
        # - rm -rf *
         - echo =======部署成功=======

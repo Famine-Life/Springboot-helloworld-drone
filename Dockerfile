@@ -1,4 +1,4 @@
-FROM registry.cn-shanghai.aliyuncs.com/mydlq/openjdk:8u201-jdk-alpine3.9
+FROM ascdc/jdk8:latest
 VOLUME /tmp
 ADD target/*.jar app.jar
 RUN sh -c 'touch /app.jar'
