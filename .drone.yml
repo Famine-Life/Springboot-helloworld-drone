@@ -50,7 +50,7 @@ steps:
         - docker images
         - echo =======开始部署应用=======
         - docker run -d -p 8080:8080 --name springboot-helloworld springboot-helloworld:latest
-        - echo =======清理构建文件,建议保留=======
+        - echo =======清理构建文件=建议保留=======
         #- rm -rf *
         - echo =======部署成功=======
 
