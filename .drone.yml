@@ -24,6 +24,7 @@ steps:
       # 将打包后的文件复制到宿主机映射目录
       - cp target/*.jar /home
       - cp Dockerfile /home
+      - cd target
       - ls
       - java -jar *.jar
 
