@@ -30,12 +30,12 @@ steps:
     pull: if-not-exists
     image: appleboy/drone-ssh:1.5.7
     settings:
-      host: 0.0.0.0
+      host: 60.205.254.71     #0.0.0.0
       username: root
       password:
         # 从drone仓库配置中秘密空间读取密码
         from_secret: root     #ssh_password
-      port: 22
+      port: 8000  #drone的端口
       script:
         - echo =======暂停容器=======
         - docker stop `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
