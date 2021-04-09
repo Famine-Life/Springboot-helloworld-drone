@@ -35,7 +35,7 @@ steps:
       password:
         # 从drone仓库配置中秘密空间读取密码
         from_secret: root     #ssh_password
-      port: 8000  #drone的端口
+      port: 22
       script:
         - echo =======暂停容器=======
         - docker stop `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
