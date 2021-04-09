@@ -36,7 +36,13 @@ steps:
         # 从drone仓库配置中秘密空间读取密码
         #from_secret: ssh_password
       port: 22
+      # 注意把下面的 springboot-helloworld 改成自己项目mvn pkg会生成的jar包名称
       script:
+        - echo =======暂停容器=======
+        - docker stop `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
+        - echo =======暂停旧容器和镜像=======
+        - docker rm -f `docker ps -a | grep springboot-helloworld | awk '{print $1}' `
+        - docker rmi `docker images | grep springboot-helloworld | awk '{print $3}' `
         - echo =======开始构建新镜像=======
         - cd /data/drone/helloDemo
         - docker build -t springboot-helloworld:latest .
